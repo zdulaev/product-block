@@ -4,3 +4,5 @@ Possibility to change the name of a product, data on new names of products are s
 Dragging and dropping goods with the mouse.
 Adaptive for mobile version.
 Two-level menu
+
+demo: https://jsfiddle.net/2vLgyjcr/
