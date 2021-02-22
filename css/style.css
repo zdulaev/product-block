@@ -1,0 +1,147 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+#popup_1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 576px;
+    max-height: 100vh;
+    height: max-content;
+    border: 2px solid #dadada;
+    border-radius: 5px;
+    overflow-x: hidden;
+}
+.menu > .menu__href {
+    padding-right: 10px;
+}
+.menu .menu__btn {
+    height: 20px;
+    background: #dadada;
+    margin: -2px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.menu > .menu__inner {
+    background: #dadada;
+    margin: 0;
+    position: absolute;
+    z-index: 100;
+    padding: 10px 0 15px 25px;
+    border-bottom-right-radius: 5px;
+    border-bottom: 1px solid #afafaf;
+    border-right: 1px solid #afafaf;
+    display: none;
+}
+.menu > .menu__inner > .menu__item {
+    padding-right: 10px;
+}
+.menu > .menu__inner > .menu__item > .menu__inner__sub {
+    position: absolute;
+    display: none;
+    padding: 10px 15px 15px 25px;
+    border-bottom-right-radius: 5px;
+    border-bottom: 1px solid #afafaf;
+    border-right: 1px solid #afafaf;
+    top: 0;
+    background: #dadada;
+    left: calc(100% - 2px);
+}
+.menu > .menu__inner .menu__inner__sub {
+    display: none;
+}
+.menu > .menu__inner > .menu__item:hover .menu__inner__sub {
+    display: block;
+}
+.menu .menu__item {
+    font-size: 14px;
+    width: max-content;
+}
+.products {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 15px;
+    justify-content: center;
+}
+.products .product {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    -ms-flex: 0 0 calc(25% - 10px);
+    flex: 0 0 calc(25% - 10px);
+    max-width: calc(25% - 10px);
+    padding: 5px;
+    background: #dadada;
+    box-sizing: border-box;
+    margin: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+.products .product .product__bottom {
+    height: 100%;
+    bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+}
+.feature {
+    display: flex;
+}
+.feature__label, .feature__value {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+.feature__label {
+    width: 40%;
+    margin-right: 10px;
+}
+
+.modal {
+    display: inline-block;
+    background: darkgrey;
+    padding: 10px 15px;
+    border-radius: 5px;
+    position: absolute;
+}
+.modal .modalString {
+    border: 1px solid grey;
+    padding: 3px 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 576px) {
+    .products .product {
+        -ms-flex: 0 0 calc(50% - 10px);
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+    .menu > .menu__inner > .menu__item.menu__sub {
+        padding-right: 20px;
+        position: relative;
+    }
+    .menu > .menu__inner > .menu__item.menu__sub::before {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        right: 2px;
+        top: 2px;
+        content: '';
+        background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyDQoJCQljLTEwLjQ5MiwxMC41MDQtMTAuNDkyLDI3LjU3NiwwLDM4LjA2NEwyOTMuMzk4LDI0NS45bC0xODQuMDYsMTg0LjA2Yy01LjA2NCw1LjA2OC03Ljg2LDExLjgyNC03Ljg2LDE5LjAyOA0KCQkJYzAsNy4yMTIsMi43OTYsMTMuOTY4LDcuODYsMTkuMDRsMTYuMTI0LDE2LjExNmM1LjA2OCw1LjA2OCwxMS44MjQsNy44NiwxOS4wMzIsNy44NnMxMy45NjgtMi43OTIsMTkuMDMyLTcuODZMMzgyLjY3OCwyNjUNCgkJCWM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K);
+        
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+}
