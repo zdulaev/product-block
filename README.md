@@ -5,4 +5,4 @@ Dragging and dropping goods with the mouse.
 Adaptive for mobile version.
 Two-level menu
 
-demo: https://jsfiddle.net/2vLgyjcr/
+demo: https://jsfiddle.net/zaurdulaev/bvsjur7n/
